@@ -15,6 +15,8 @@
 
 > *"Deep-space ink, neon cyan, magenta scanlines."*
 
+### [`Read the Docs`](https://menketechnologies.github.io/zpwr-theme/) &middot; [`Engineering Report`](https://menketechnologies.github.io/zpwr-theme/report.html)
+
 The MenkeTechnologies cyberpunk editor themes — the **5 Audio-Haxor preset
 colorschemes**, each in **dark and light** (10 variants), packaged for both
 **VS Code** and **JetBrains** IDEs. Same palettes that drive `zpwrchrome`'s
