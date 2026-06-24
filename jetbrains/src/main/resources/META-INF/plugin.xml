@@ -1,23 +1,29 @@
 <idea-plugin>
   <id>com.menketechnologies.zpwr-theme</id>
   <name>ZPWR Cyberpunk HUD</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <vendor email="MenkeTechnologies@gmail.com" url="https://github.com/MenkeTechnologies">MenkeTechnologies</vendor>
 
   <description><![CDATA[
-    <p>Cyberpunk HUD color theme for JetBrains IDEs — the Strykelang palette
-    (deep-space ink, neon cyan, magenta scanlines) shared with
-    <code>zpwrchrome</code>, <code>zpwr</code>, <code>strykelang</code>, and the
-    VS Code edition. Ships a full UI theme plus a matching editor color scheme.</p>
+    <p>The MenkeTechnologies cyberpunk editor themes — the 5 Audio-Haxor preset
+    colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in dark and
+    light, with matching editor color schemes. Shared palette with
+    <code>zpwrchrome</code>, <code>zpwr</code>, and <code>strykelang</code>.</p>
   ]]></description>
 
-  <!-- Themes need only the platform; no compiled code. -->
   <depends>com.intellij.modules.platform</depends>
-
-  <!-- Works on every JetBrains IDE; UI-theme API has been stable since 2019.1. -->
   <idea-version since-build="191" />
 
   <extensions defaultExtensionNs="com.intellij">
-    <themeProvider id="zpwr-cyberpunk-hud" path="/zpwr-cyberpunk-hud.theme.json" />
+    <themeProvider id="zpwr-cyberpunk-dark" path="/zpwr-cyberpunk-dark.theme.json" />
+    <themeProvider id="zpwr-cyberpunk-light" path="/zpwr-cyberpunk-light.theme.json" />
+    <themeProvider id="zpwr-midnight-dark" path="/zpwr-midnight-dark.theme.json" />
+    <themeProvider id="zpwr-midnight-light" path="/zpwr-midnight-light.theme.json" />
+    <themeProvider id="zpwr-matrix-dark" path="/zpwr-matrix-dark.theme.json" />
+    <themeProvider id="zpwr-matrix-light" path="/zpwr-matrix-light.theme.json" />
+    <themeProvider id="zpwr-ember-dark" path="/zpwr-ember-dark.theme.json" />
+    <themeProvider id="zpwr-ember-light" path="/zpwr-ember-light.theme.json" />
+    <themeProvider id="zpwr-arctic-dark" path="/zpwr-arctic-dark.theme.json" />
+    <themeProvider id="zpwr-arctic-light" path="/zpwr-arctic-light.theme.json" />
   </extensions>
 </idea-plugin>

@@ -1,10 +1,17 @@
-# ZPWR Cyberpunk HUD — Palette
+# ZPWR Themes — Palette & Role Mapping
 
-The canonical Strykelang HUD palette, the single source of truth for both the
-VS Code and JetBrains editions. Identical to `zpwrchrome/lib/cyber-theme-css.js`
-and the `strykelang` / `zshrs` / `zpwr` docs design system.
+The **color values** for all 5 schemes (Cyberpunk, Midnight, Matrix, Ember,
+Arctic), each in dark and light, live in
+[`palette/schemes.json`](palette/schemes.json) — ported from
+`Audio-Haxor/frontend/js/settings.js` (the in-app preset colorschemes). That
+file is the single source of truth; `scripts/generate.mjs` maps it to every
+editor theme.
 
-## Base
+This document describes the **role mapping** — which palette slot drives which
+editor token — using the default **Cyberpunk (dark)** scheme as the example.
+The same mapping applies to every scheme/variant.
+
+## Base (Cyberpunk dark)
 
 | Name | Hex | Use |
 |---|---|---|

@@ -1,0 +1,85 @@
+{
+  "_source": "Ported faithfully from Audio-Haxor/frontend/js/settings.js COLOR_SCHEMES (the 5 in-app preset colorschemes). Solid hex only; the web build's -glow/-dim/-bg rgba values are derived at theme-gen time. Single source of truth for every generated editor theme — edit here, then run scripts/generate.mjs.",
+  "schemes": {
+    "cyberpunk": {
+      "label": "Cyberpunk",
+      "desc": "Hot pink + cyan neon",
+      "dark": {
+        "accent": "#ff2a6d", "accentLight": "#ff6b9d", "cyan": "#05d9e8", "magenta": "#d300c5",
+        "green": "#39ff14", "yellow": "#f9f002", "orange": "#ff6b35", "red": "#ff073a",
+        "text": "#e0f0ff", "textDim": "#7a8ba8", "textMuted": "#3d4f6a",
+        "bgPrimary": "#05050a", "bgSecondary": "#0a0a14", "bgCard": "#0d0d1a", "bgHover": "#12122a", "border": "#1a1a3e"
+      },
+      "light": {
+        "accent": "#d6196e", "accentLight": "#e84d8a", "cyan": "#0891b2", "magenta": "#a300a3",
+        "green": "#15803d", "yellow": "#a16207", "orange": "#c2410c", "red": "#dc2626",
+        "text": "#1e293b", "textDim": "#475569", "textMuted": "#94a3b8",
+        "bgPrimary": "#f0f2f5", "bgSecondary": "#e4e7ec", "bgCard": "#ffffff", "bgHover": "#f7f8fa", "border": "#cbd5e1"
+      }
+    },
+    "midnight": {
+      "label": "Midnight",
+      "desc": "Deep blue + electric purple",
+      "dark": {
+        "accent": "#7c3aed", "accentLight": "#a78bfa", "cyan": "#38bdf8", "magenta": "#6366f1",
+        "green": "#34d399", "yellow": "#c084fc", "orange": "#818cf8", "red": "#f472b6",
+        "text": "#e0e7ff", "textDim": "#94a3b8", "textMuted": "#475569",
+        "bgPrimary": "#050510", "bgSecondary": "#0a0a1e", "bgCard": "#0d0d28", "bgHover": "#141432", "border": "#1e1e4a"
+      },
+      "light": {
+        "accent": "#6d28d9", "accentLight": "#8b5cf6", "cyan": "#0284c7", "magenta": "#4f46e5",
+        "green": "#059669", "yellow": "#7c3aed", "orange": "#6366f1", "red": "#e11d48",
+        "text": "#1e1b4b", "textDim": "#4338ca", "textMuted": "#a5b4fc",
+        "bgPrimary": "#eef2ff", "bgSecondary": "#e0e7ff", "bgCard": "#ffffff", "bgHover": "#f5f3ff", "border": "#c7d2fe"
+      }
+    },
+    "matrix": {
+      "label": "Matrix",
+      "desc": "Terminal green on black",
+      "dark": {
+        "accent": "#22c55e", "accentLight": "#4ade80", "cyan": "#39ff14", "magenta": "#16a34a",
+        "green": "#4ade80", "yellow": "#a3e635", "orange": "#86efac", "red": "#ef4444",
+        "text": "#d1fae5", "textDim": "#6ee7b7", "textMuted": "#365314",
+        "bgPrimary": "#020a02", "bgSecondary": "#061006", "bgCard": "#081408", "bgHover": "#0e200e", "border": "#1a3a1a"
+      },
+      "light": {
+        "accent": "#16a34a", "accentLight": "#22c55e", "cyan": "#15803d", "magenta": "#166534",
+        "green": "#22c55e", "yellow": "#65a30d", "orange": "#4ade80", "red": "#dc2626",
+        "text": "#14532d", "textDim": "#166534", "textMuted": "#86efac",
+        "bgPrimary": "#f0fdf4", "bgSecondary": "#dcfce7", "bgCard": "#ffffff", "bgHover": "#f0fdf4", "border": "#bbf7d0"
+      }
+    },
+    "ember": {
+      "label": "Ember",
+      "desc": "Warm amber + orange tones",
+      "dark": {
+        "accent": "#f59e0b", "accentLight": "#fbbf24", "cyan": "#fb923c", "magenta": "#ea580c",
+        "green": "#84cc16", "yellow": "#fde047", "orange": "#f97316", "red": "#dc2626",
+        "text": "#fef3c7", "textDim": "#d97706", "textMuted": "#92400e",
+        "bgPrimary": "#0a0502", "bgSecondary": "#120a04", "bgCard": "#1a0e06", "bgHover": "#24140a", "border": "#3e2a1a"
+      },
+      "light": {
+        "accent": "#d97706", "accentLight": "#f59e0b", "cyan": "#ea580c", "magenta": "#c2410c",
+        "green": "#65a30d", "yellow": "#a16207", "orange": "#c2410c", "red": "#dc2626",
+        "text": "#451a03", "textDim": "#92400e", "textMuted": "#fbbf24",
+        "bgPrimary": "#fffbeb", "bgSecondary": "#fef3c7", "bgCard": "#ffffff", "bgHover": "#fffbeb", "border": "#fde68a"
+      }
+    },
+    "arctic": {
+      "label": "Arctic",
+      "desc": "Cool whites + icy blue",
+      "dark": {
+        "accent": "#0ea5e9", "accentLight": "#38bdf8", "cyan": "#67e8f9", "magenta": "#06b6d4",
+        "green": "#2dd4bf", "yellow": "#a5f3fc", "orange": "#22d3ee", "red": "#f43f5e",
+        "text": "#ecfeff", "textDim": "#a5f3fc", "textMuted": "#155e75",
+        "bgPrimary": "#020a0e", "bgSecondary": "#041218", "bgCard": "#061a22", "bgHover": "#0a2430", "border": "#1a3a4e"
+      },
+      "light": {
+        "accent": "#0284c7", "accentLight": "#0ea5e9", "cyan": "#0891b2", "magenta": "#0e7490",
+        "green": "#0d9488", "yellow": "#155e75", "orange": "#06b6d4", "red": "#e11d48",
+        "text": "#164e63", "textDim": "#0e7490", "textMuted": "#a5f3fc",
+        "bgPrimary": "#ecfeff", "bgSecondary": "#cffafe", "bgCard": "#ffffff", "bgHover": "#ecfeff", "border": "#a5f3fc"
+      }
+    }
+  }
+}

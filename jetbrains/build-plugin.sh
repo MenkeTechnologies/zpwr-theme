@@ -24,8 +24,9 @@ rm -rf "$out"
 mkdir -p "$stage"
 
 # The plugin jar is the resources tree zipped with a .jar extension; plugin.xml
-# must sit at META-INF/plugin.xml inside it.
-( cd "$res" && zip -qr "$stage/$name.jar" META-INF zpwr-cyberpunk-hud.theme.json zpwr-cyberpunk-hud.xml )
+# must sit at META-INF/plugin.xml inside it. All generated theme.json + editor
+# scheme XML files (one pair per scheme/variant) ship alongside it.
+( cd "$res" && zip -qr "$stage/$name.jar" META-INF zpwr-*.theme.json zpwr-*.xml )
 
 # The distributable is <name>/lib/<name>.jar zipped from the build dir.
 ( cd "$out" && zip -qr "$name-$ver.zip" "$name" )

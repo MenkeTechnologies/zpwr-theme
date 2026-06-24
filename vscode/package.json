@@ -1,8 +1,8 @@
 {
   "name": "zpwr-cyberpunk-hud",
   "displayName": "ZPWR Cyberpunk HUD",
-  "description": "Cyberpunk HUD color theme for VS Code — the Strykelang palette (deep-space ink, neon cyan, magenta scanlines) shared with zpwrchrome, zpwr, and strykelang. Companion to vscode-stryke.",
-  "version": "0.1.0",
+  "description": "The MenkeTechnologies cyberpunk editor themes — the 5 Audio-Haxor preset colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in dark and light. Shared Strykelang palette with zpwrchrome, zpwr, and strykelang. Companion to vscode-stryke.",
+  "version": "0.2.0",
   "publisher": "MenkeTechnologies",
   "license": "MIT",
   "engines": {
@@ -34,9 +34,54 @@
   "contributes": {
     "themes": [
       {
-        "label": "ZPWR Cyberpunk HUD",
+        "label": "ZPWR Cyberpunk",
         "uiTheme": "vs-dark",
-        "path": "./themes/zpwr-cyberpunk-hud-color-theme.json"
+        "path": "./themes/zpwr-cyberpunk-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Cyberpunk Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-cyberpunk-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-midnight-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Midnight Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-midnight-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Matrix",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-matrix-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Matrix Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-matrix-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Ember",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-ember-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Ember Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-ember-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Arctic",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-arctic-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Arctic Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-arctic-light-color-theme.json"
       }
     ]
   }

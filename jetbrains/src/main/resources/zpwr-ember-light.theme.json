@@ -1,0 +1,255 @@
+{
+  "name": "ZPWR Ember Light",
+  "author": "MenkeTechnologies",
+  "dark": false,
+  "editorScheme": "/zpwr-ember-light.xml",
+  "colors": {
+    "ink": "#fffbeb",
+    "panel": "#fef3c7",
+    "card": "#ffffff",
+    "hover": "#fffbeb",
+    "border": "#fde68a",
+    "cyan": "#ea580c",
+    "cyanBright": "#ef8249",
+    "pink": "#d97706",
+    "magenta": "#c2410c",
+    "green": "#65a30d",
+    "orange": "#c2410c",
+    "yellow": "#a16207",
+    "text": "#451a03",
+    "textSoft": "#5c2506",
+    "textDim": "#92400e",
+    "muted": "#fbbf24"
+  },
+  "ui": {
+    "*": {
+      "background": "panel",
+      "foreground": "text",
+      "infoForeground": "textDim",
+      "disabledBackground": "ink",
+      "disabledForeground": "muted",
+      "disabledText": "muted",
+      "inactiveForeground": "textDim",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan",
+      "selectionInactiveBackground": "card",
+      "selectionInactiveForeground": "text",
+      "borderColor": "border",
+      "separatorColor": "border",
+      "focusColor": "cyan",
+      "focusedBorderColor": "cyan",
+      "errorForeground": "pink",
+      "acceleratorForeground": "cyan"
+    },
+    "Editor": {
+      "background": "ink",
+      "shortcutForeground": "cyan"
+    },
+    "Panel": {
+      "background": "panel",
+      "foreground": "text"
+    },
+    "Borders": {
+      "color": "border",
+      "ContrastBorderColor": "border"
+    },
+    "Button": {
+      "startBackground": "card",
+      "endBackground": "card",
+      "foreground": "text",
+      "startBorderColor": "border",
+      "endBorderColor": "border",
+      "focusedBorderColor": "cyan",
+      "default": {
+        "startBackground": "cyan",
+        "endBackground": "cyan",
+        "foreground": "ink",
+        "startBorderColor": "cyan",
+        "endBorderColor": "cyan",
+        "focusColor": "cyanBright"
+      }
+    },
+    "Component": {
+      "focusColor": "cyan",
+      "focusedBorderColor": "cyan",
+      "borderColor": "border",
+      "errorFocusColor": "pink",
+      "warningFocusColor": "yellow"
+    },
+    "Link": {
+      "activeForeground": "cyan",
+      "hoverForeground": "cyanBright",
+      "visitedForeground": "magenta",
+      "pressedForeground": "green"
+    },
+    "ProgressBar": {
+      "progressColor": "cyan",
+      "indeterminateStartColor": "cyan",
+      "indeterminateEndColor": "magenta",
+      "trackColor": "card"
+    },
+    "TextField": {
+      "background": "card",
+      "foreground": "text"
+    },
+    "TextArea": {
+      "background": "card",
+      "foreground": "text"
+    },
+    "ComboBox": {
+      "background": "card",
+      "nonEditableBackground": "card",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan"
+    },
+    "List": {
+      "background": "panel",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan",
+      "selectionInactiveBackground": "card",
+      "hoverBackground": "hover"
+    },
+    "Table": {
+      "background": "panel",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan",
+      "gridColor": "border",
+      "stripeColor": "card"
+    },
+    "Tree": {
+      "background": "panel",
+      "foreground": "textSoft",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan",
+      "selectionInactiveBackground": "card",
+      "hoverBackground": "hover",
+      "hash": "border"
+    },
+    "Menu": {
+      "background": "panel",
+      "borderColor": "border",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan"
+    },
+    "MenuItem": {
+      "background": "panel",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan",
+      "acceleratorForeground": "textDim"
+    },
+    "MenuBar": {
+      "background": "ink",
+      "borderColor": "border",
+      "selectionBackground": "hover",
+      "selectionForeground": "cyan"
+    },
+    "PopupMenu": {
+      "background": "panel",
+      "borderColor": "border"
+    },
+    "CompletionPopup": {
+      "background": "panel",
+      "selectionBackground": "hover",
+      "matchForeground": "cyan",
+      "matchSelectionForeground": "green"
+    },
+    "ToolWindow": {
+      "Header": {
+        "background": "card",
+        "inactiveBackground": "panel",
+        "borderColor": "border"
+      },
+      "HeaderTab": {
+        "selectedBackground": "hover",
+        "selectedInactiveBackground": "card",
+        "hoverBackground": "hover",
+        "underlineColor": "cyan",
+        "inactiveUnderlineColor": "textDim"
+      },
+      "Button": {
+        "selectedBackground": "hover",
+        "selectedForeground": "cyan",
+        "hoverBackground": "hover"
+      }
+    },
+    "DefaultTabs": {
+      "background": "ink",
+      "borderColor": "border",
+      "underlinedTabBackground": "panel",
+      "underlinedTabForeground": "text",
+      "underlineColor": "cyan",
+      "inactiveUnderlineColor": "textDim",
+      "hoverBackground": "hover"
+    },
+    "EditorTabs": {
+      "background": "ink",
+      "underlinedTabBackground": "ink",
+      "underlinedTabForeground": "text",
+      "underlineColor": "cyan",
+      "inactiveColoredFileBackground": "panel",
+      "hoverBackground": "hover",
+      "borderColor": "border"
+    },
+    "StatusBar": {
+      "background": "ink",
+      "borderColor": "border",
+      "hoverBackground": "hover"
+    },
+    "NavBar": {
+      "borderColor": "border"
+    },
+    "ScrollBar": {
+      "thumbColor": "#fde68a80",
+      "hoverThumbColor": "#ea580c40"
+    },
+    "TitlePane": {
+      "background": "ink",
+      "borderColor": "border",
+      "inactiveBackground": "ink"
+    },
+    "MainToolbar": {
+      "background": "ink",
+      "Icon": {
+        "hoverBackground": "hover"
+      },
+      "Dropdown": {
+        "hoverBackground": "hover"
+      }
+    },
+    "ActionButton": {
+      "hoverBackground": "hover",
+      "hoverBorderColor": "border",
+      "pressedBackground": "card"
+    },
+    "Notification": {
+      "background": "card",
+      "borderColor": "border",
+      "errorBackground": "#dc262622",
+      "errorBorderColor": "pink"
+    },
+    "Tooltip": {
+      "background": "card",
+      "borderColor": "border"
+    },
+    "Counter": {
+      "background": "pink",
+      "foreground": "ink"
+    }
+  },
+  "icons": {
+    "ColorPalette": {
+      "Actions.Blue": "#ea580c",
+      "Actions.Green": "#65a30d",
+      "Actions.Red": "#dc2626",
+      "Actions.Yellow": "#a16207",
+      "Actions.Grey": "#92400e",
+      "Objects.Blue": "#ea580c",
+      "Objects.Green": "#65a30d",
+      "Objects.Pink": "#d97706",
+      "Objects.Purple": "#c2410c",
+      "Objects.Red": "#dc2626",
+      "Objects.Yellow": "#a16207",
+      "Objects.Grey": "#92400e"
+    }
+  }
+}

@@ -1,25 +1,25 @@
 {
-  "name": "ZPWR Cyberpunk HUD",
+  "name": "ZPWR Midnight Light",
   "author": "MenkeTechnologies",
-  "dark": true,
-  "editorScheme": "/zpwr-cyberpunk-hud.xml",
+  "dark": false,
+  "editorScheme": "/zpwr-midnight-light.xml",
   "colors": {
-    "ink": "#05050a",
-    "panel": "#0a0a14",
-    "card": "#0d0d1a",
-    "hover": "#12122a",
-    "border": "#1a1a3e",
-    "cyan": "#05d9e8",
-    "cyanBright": "#4ae8ff",
-    "pink": "#ff2a6d",
-    "magenta": "#d300c5",
-    "green": "#39ff14",
-    "orange": "#ff8c1a",
-    "yellow": "#ffb800",
-    "text": "#e0f0ff",
-    "textSoft": "#c8d8ee",
-    "textDim": "#7a8ba8",
-    "muted": "#3d4f6a"
+    "ink": "#eef2ff",
+    "panel": "#e0e7ff",
+    "card": "#ffffff",
+    "hover": "#f5f3ff",
+    "border": "#c7d2fe",
+    "cyan": "#0284c7",
+    "cyanBright": "#41a3d5",
+    "pink": "#6d28d9",
+    "magenta": "#4f46e5",
+    "green": "#059669",
+    "orange": "#6366f1",
+    "yellow": "#7c3aed",
+    "text": "#1e1b4b",
+    "textSoft": "#292471",
+    "textDim": "#4338ca",
+    "muted": "#a5b4fc"
   },
   "ui": {
     "*": {
@@ -88,9 +88,14 @@
       "indeterminateEndColor": "magenta",
       "trackColor": "card"
     },
-    "TextField": { "background": "card", "foreground": "text" },
-    "TextArea": { "background": "card", "foreground": "text" },
-    "PasswordField": { "background": "card" },
+    "TextField": {
+      "background": "card",
+      "foreground": "text"
+    },
+    "TextArea": {
+      "background": "card",
+      "foreground": "text"
+    },
     "ComboBox": {
       "background": "card",
       "nonEditableBackground": "card",
@@ -138,7 +143,10 @@
       "selectionBackground": "hover",
       "selectionForeground": "cyan"
     },
-    "PopupMenu": { "background": "panel", "borderColor": "border" },
+    "PopupMenu": {
+      "background": "panel",
+      "borderColor": "border"
+    },
     "CompletionPopup": {
       "background": "panel",
       "selectionBackground": "hover",
@@ -187,11 +195,12 @@
       "borderColor": "border",
       "hoverBackground": "hover"
     },
-    "NavBar": { "borderColor": "border" },
+    "NavBar": {
+      "borderColor": "border"
+    },
     "ScrollBar": {
-      "thumbColor": "#1a1a3e80",
-      "hoverThumbColor": "#05d9e840",
-      "thumbBorderColor": "#1a1a3e00"
+      "thumbColor": "#c7d2fe80",
+      "hoverThumbColor": "#0284c740"
     },
     "TitlePane": {
       "background": "ink",
@@ -200,8 +209,12 @@
     },
     "MainToolbar": {
       "background": "ink",
-      "Icon": { "hoverBackground": "hover" },
-      "Dropdown": { "hoverBackground": "hover" }
+      "Icon": {
+        "hoverBackground": "hover"
+      },
+      "Dropdown": {
+        "hoverBackground": "hover"
+      }
     },
     "ActionButton": {
       "hoverBackground": "hover",
@@ -211,40 +224,32 @@
     "Notification": {
       "background": "card",
       "borderColor": "border",
-      "errorBackground": "#2a0a14",
+      "errorBackground": "#e11d4822",
       "errorBorderColor": "pink"
     },
-    "Tooltip": { "background": "card", "borderColor": "border" },
-    "ValidationTooltip": {
-      "errorBackground": "#2a0a14",
-      "errorBorderColor": "pink",
-      "warningBackground": "#2a230a",
-      "warningBorderColor": "yellow"
+    "Tooltip": {
+      "background": "card",
+      "borderColor": "border"
     },
-    "Counter": { "background": "pink", "foreground": "ink" },
-    "FileColor": {
-      "Blue": "#05d9e818",
-      "Green": "#39ff1418",
-      "Orange": "#ff8c1a18",
-      "Rose": "#ff2a6d18",
-      "Violet": "#d300c518",
-      "Yellow": "#ffb80018"
+    "Counter": {
+      "background": "pink",
+      "foreground": "ink"
     }
   },
   "icons": {
     "ColorPalette": {
-      "Actions.Blue": "#05d9e8",
-      "Actions.Green": "#39ff14",
-      "Actions.Red": "#ff2a6d",
-      "Actions.Yellow": "#ffb800",
-      "Actions.Grey": "#7a8ba8",
-      "Objects.Blue": "#05d9e8",
-      "Objects.Green": "#39ff14",
-      "Objects.Pink": "#ff2a6d",
-      "Objects.Purple": "#d300c5",
-      "Objects.Red": "#ff2a6d",
-      "Objects.Yellow": "#ffb800",
-      "Objects.Grey": "#7a8ba8"
+      "Actions.Blue": "#0284c7",
+      "Actions.Green": "#059669",
+      "Actions.Red": "#e11d48",
+      "Actions.Yellow": "#7c3aed",
+      "Actions.Grey": "#4338ca",
+      "Objects.Blue": "#0284c7",
+      "Objects.Green": "#059669",
+      "Objects.Pink": "#6d28d9",
+      "Objects.Purple": "#4f46e5",
+      "Objects.Red": "#e11d48",
+      "Objects.Yellow": "#7c3aed",
+      "Objects.Grey": "#4338ca"
     }
   }
 }

@@ -29,46 +29,71 @@ jobs:
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y jq libxml2-utils
 
-      - name: Validate JSON (theme + manifests)
+      - name: Generated theme files are up to date (no drift from palette/schemes.json)
+        run: |
+          set -euo pipefail
+          node scripts/generate.mjs
+          if ! git diff --quiet; then
+            echo "::error::generated files differ from palette/schemes.json — run 'node scripts/generate.mjs' and commit"
+            git --no-pager diff --stat
+            exit 1
+          fi
+          echo "generated theme set is in sync with the palette"
+
+      - name: Validate JSON (every theme + manifests)
         run: |
           set -euo pipefail
           jq -e . vscode/package.json > /dev/null
-          jq -e . vscode/themes/zpwr-cyberpunk-hud-color-theme.json > /dev/null
-          jq -e . jetbrains/src/main/resources/zpwr-cyberpunk-hud.theme.json > /dev/null
+          jq -e . palette/schemes.json > /dev/null
+          for f in vscode/themes/*.json jetbrains/src/main/resources/*.theme.json; do
+            jq -e . "$f" > /dev/null
+          done
           echo "all JSON valid"
 
-      - name: Validate XML (plugin descriptor + editor scheme)
+      - name: Validate XML (plugin descriptor + every editor scheme)
         run: |
           set -euo pipefail
           xmllint --noout jetbrains/src/main/resources/META-INF/plugin.xml
-          xmllint --noout jetbrains/src/main/resources/zpwr-cyberpunk-hud.xml
+          for f in jetbrains/src/main/resources/*.xml; do xmllint --noout "$f"; done
           echo "all XML valid"
 
       - name: Every theme color value is a valid hex
         run: |
           set -euo pipefail
-          bad=$(jq -r '.colors | to_entries[] | .value' vscode/themes/zpwr-cyberpunk-hud-color-theme.json \
+          bad=$(for f in vscode/themes/*.json; do jq -r '.colors | to_entries[] | .value' "$f"; done \
             | grep -vE '^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$' || true)
           if [ -n "$bad" ]; then
-            echo "::error::non-hex color values in VS Code theme:"; echo "$bad"; exit 1
+            echo "::error::non-hex color values in a VS Code theme:"; echo "$bad"; exit 1
           fi
           echo "all VS Code workbench colors are valid hex"
 
-      - name: VS Code theme path in package.json exists
+      - name: Every contributes.themes path exists
         run: |
           set -euo pipefail
-          p=$(jq -r '.contributes.themes[0].path' vscode/package.json)
-          test -f "vscode/${p#./}"
-          echo "theme path ok: $p"
+          jq -r '.contributes.themes[].path' vscode/package.json | while read -r p; do
+            test -f "vscode/${p#./}" || { echo "::error::missing theme file $p"; exit 1; }
+          done
+          echo "all VS Code theme paths resolve"
 
-      - name: JetBrains editorScheme reference resolves
+      - name: Every JetBrains editorScheme reference resolves
         run: |
           set -euo pipefail
-          s=$(jq -r '.editorScheme' jetbrains/src/main/resources/zpwr-cyberpunk-hud.theme.json)
-          test -f "jetbrains/src/main/resources${s}"
-          echo "editorScheme ok: $s"
+          for f in jetbrains/src/main/resources/*.theme.json; do
+            s=$(jq -r '.editorScheme' "$f")
+            test -f "jetbrains/src/main/resources${s}" || { echo "::error::missing editor scheme $s"; exit 1; }
+          done
+          echo "all editorScheme references resolve"
 
-      - name: plugin.xml <version> matches theme version
+      - name: Theme provider count matches the theme set
+        run: |
+          set -euo pipefail
+          providers=$(grep -c 'themeProvider' jetbrains/src/main/resources/META-INF/plugin.xml)
+          vsthemes=$(jq '.contributes.themes | length' vscode/package.json)
+          jbthemes=$(ls jetbrains/src/main/resources/*.theme.json | wc -l | tr -d ' ')
+          echo "vscode=$vsthemes jetbrains-providers=$providers jetbrains-files=$jbthemes"
+          [ "$providers" = "$vsthemes" ] && [ "$providers" = "$jbthemes" ] || { echo "::error::theme count mismatch across editions"; exit 1; }
+
+      - name: plugin.xml <version> matches VS Code version
         run: |
           set -euo pipefail
           xml_ver=$(grep -oE '<version>[^<]+</version>' jetbrains/src/main/resources/META-INF/plugin.xml | head -1 | sed -E 's/<\/?version>//g')
