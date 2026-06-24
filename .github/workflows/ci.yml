@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y jq libxml2-utils
+
+      - name: Validate JSON (theme + manifests)
+        run: |
+          set -euo pipefail
+          jq -e . vscode/package.json > /dev/null
+          jq -e . vscode/themes/zpwr-cyberpunk-hud-color-theme.json > /dev/null
+          jq -e . jetbrains/src/main/resources/zpwr-cyberpunk-hud.theme.json > /dev/null
+          echo "all JSON valid"
+
+      - name: Validate XML (plugin descriptor + editor scheme)
+        run: |
+          set -euo pipefail
+          xmllint --noout jetbrains/src/main/resources/META-INF/plugin.xml
+          xmllint --noout jetbrains/src/main/resources/zpwr-cyberpunk-hud.xml
+          echo "all XML valid"
+
+      - name: Every theme color value is a valid hex
+        run: |
+          set -euo pipefail
+          bad=$(jq -r '.colors | to_entries[] | .value' vscode/themes/zpwr-cyberpunk-hud-color-theme.json \
+            | grep -vE '^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::non-hex color values in VS Code theme:"; echo "$bad"; exit 1
+          fi
+          echo "all VS Code workbench colors are valid hex"
+
+      - name: VS Code theme path in package.json exists
+        run: |
+          set -euo pipefail
+          p=$(jq -r '.contributes.themes[0].path' vscode/package.json)
+          test -f "vscode/${p#./}"
+          echo "theme path ok: $p"
+
+      - name: JetBrains editorScheme reference resolves
+        run: |
+          set -euo pipefail
+          s=$(jq -r '.editorScheme' jetbrains/src/main/resources/zpwr-cyberpunk-hud.theme.json)
+          test -f "jetbrains/src/main/resources${s}"
+          echo "editorScheme ok: $s"
+
+      - name: plugin.xml <version> matches theme version
+        run: |
+          set -euo pipefail
+          xml_ver=$(grep -oE '<version>[^<]+</version>' jetbrains/src/main/resources/META-INF/plugin.xml | head -1 | sed -E 's/<\/?version>//g')
+          vsc_ver=$(jq -r '.version' vscode/package.json)
+          echo "jetbrains=$xml_ver vscode=$vsc_ver"
+          [ "$xml_ver" = "$vsc_ver" ] || { echo "::error::version drift between editions"; exit 1; }
+
+      - name: Build JetBrains plugin zip
+        run: |
+          set -euo pipefail
+          bash jetbrains/build-plugin.sh
+          ls jetbrains/build/zpwr-theme-*.zip
+
+      - name: Package VS Code extension (.vsix)
+        run: |
+          set -euo pipefail
+          cd vscode
+          npx --yes @vscode/vsce package --no-dependencies -o /tmp/zpwr-cyberpunk-hud.vsix
+          test -f /tmp/zpwr-cyberpunk-hud.vsix

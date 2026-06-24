@@ -1,0 +1,43 @@
+{
+  "name": "zpwr-cyberpunk-hud",
+  "displayName": "ZPWR Cyberpunk HUD",
+  "description": "Cyberpunk HUD color theme for VS Code — the Strykelang palette (deep-space ink, neon cyan, magenta scanlines) shared with zpwrchrome, zpwr, and strykelang. Companion to vscode-stryke.",
+  "version": "0.1.0",
+  "publisher": "MenkeTechnologies",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "zpwr",
+    "stryke",
+    "cyberpunk",
+    "neon",
+    "dark theme"
+  ],
+  "galleryBanner": {
+    "color": "#05050a",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MenkeTechnologies/zpwr-theme.git",
+    "directory": "vscode"
+  },
+  "homepage": "https://github.com/MenkeTechnologies/zpwr-theme",
+  "bugs": {
+    "url": "https://github.com/MenkeTechnologies/zpwr-theme/issues"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "ZPWR Cyberpunk HUD",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-cyberpunk-hud-color-theme.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+<idea-plugin>
+  <id>com.menketechnologies.zpwr-theme</id>
+  <name>ZPWR Cyberpunk HUD</name>
+  <version>0.1.0</version>
+  <vendor email="MenkeTechnologies@gmail.com" url="https://github.com/MenkeTechnologies">MenkeTechnologies</vendor>
+
+  <description><![CDATA[
+    <p>Cyberpunk HUD color theme for JetBrains IDEs — the Strykelang palette
+    (deep-space ink, neon cyan, magenta scanlines) shared with
+    <code>zpwrchrome</code>, <code>zpwr</code>, <code>strykelang</code>, and the
+    VS Code edition. Ships a full UI theme plus a matching editor color scheme.</p>
+  ]]></description>
+
+  <!-- Themes need only the platform; no compiled code. -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Works on every JetBrains IDE; UI-theme API has been stable since 2019.1. -->
+  <idea-version since-build="191" />
+
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="zpwr-cyberpunk-hud" path="/zpwr-cyberpunk-hud.theme.json" />
+  </extensions>
+</idea-plugin>
