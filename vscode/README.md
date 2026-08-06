@@ -1,8 +1,8 @@
 # ZPWR Cyberpunk HUD — VS Code
 
-The MenkeTechnologies cyberpunk editor themes — the **5 Audio-Haxor preset
-colorschemes** (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in **dark and
-light** (10 total), on the shared **Strykelang HUD** palette (`zpwrchrome`,
+The MenkeTechnologies cyberpunk editor themes — the **8 canonical HUD
+colorschemes** (Cyberpunk, Midnight, Matrix, Ember, Arctic, Crimson, Toxic, Vapor), each in **dark and
+light** (16 total), on the shared **Strykelang HUD** palette (`zpwrchrome`,
 `zpwr`, `strykelang`). Companion to
 [`vscode-stryke`](https://github.com/MenkeTechnologies/vscode-stryke).
 

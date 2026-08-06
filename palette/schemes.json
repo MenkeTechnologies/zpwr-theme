@@ -1,5 +1,5 @@
 {
-  "_source": "Ported faithfully from Audio-Haxor/frontend/js/settings.js COLOR_SCHEMES (the 5 in-app preset colorschemes). Solid hex only; the web build's -glow/-dim/-bg rgba values are derived at theme-gen time. Single source of truth for every generated editor theme — edit here, then run scripts/generate.mjs.",
+  "_source": "Ported faithfully from the canonical HUD colorscheme catalog — Audio-Haxor/frontend/js/settings.js COLOR_SCHEMES for cyberpunk/midnight/matrix/ember/arctic, docs/hud-theme.js COLOR_SCHEMES for crimson/toxic/vapor (the same SCHEME_ORDER the meta gate tests/docs-hud-theme-schemes.sh pins across the fleet). Solid hex only; the web build's -glow/-dim/-bg rgba values are derived at theme-gen time. Single source of truth for every generated editor theme — edit here, then run scripts/generate.mjs.",
   "schemes": {
     "cyberpunk": {
       "label": "Cyberpunk",
@@ -79,6 +79,54 @@
         "green": "#0d9488", "yellow": "#155e75", "orange": "#06b6d4", "red": "#e11d48",
         "text": "#164e63", "textDim": "#0e7490", "textMuted": "#a5f3fc",
         "bgPrimary": "#ecfeff", "bgSecondary": "#cffafe", "bgCard": "#ffffff", "bgHover": "#ecfeff", "border": "#a5f3fc"
+      }
+    },
+    "crimson": {
+      "label": "Crimson",
+      "desc": "Rose-red accent + teal highlight",
+      "dark": {
+        "accent": "#e11d48", "accentLight": "#fb7185", "cyan": "#2dd4bf", "magenta": "#f43f5e",
+        "green": "#22c55e", "yellow": "#fbbf24", "orange": "#fb923c", "red": "#ff073a",
+        "text": "#ffe4e6", "textDim": "#b08a92", "textMuted": "#6b4a52",
+        "bgPrimary": "#0a0506", "bgSecondary": "#140a0c", "bgCard": "#1a0d10", "bgHover": "#2a1318", "border": "#3e1a22"
+      },
+      "light": {
+        "accent": "#be123c", "accentLight": "#e11d48", "cyan": "#0d9488", "magenta": "#be185d",
+        "green": "#15803d", "yellow": "#a16207", "orange": "#c2410c", "red": "#dc2626",
+        "text": "#1e293b", "textDim": "#475569", "textMuted": "#94a3b8",
+        "bgPrimary": "#faf0f1", "bgSecondary": "#f2e4e6", "bgCard": "#ffffff", "bgHover": "#fdf6f7", "border": "#e0c5cb"
+      }
+    },
+    "toxic": {
+      "label": "Toxic",
+      "desc": "Acid-lime accent + magenta",
+      "dark": {
+        "accent": "#c6ff00", "accentLight": "#e2ff6b", "cyan": "#00e5ff", "magenta": "#ff00aa",
+        "green": "#39ff14", "yellow": "#f9f002", "orange": "#ff6b35", "red": "#ff073a",
+        "text": "#e8ffd0", "textDim": "#8a9a6a", "textMuted": "#4a5a32",
+        "bgPrimary": "#07090a", "bgSecondary": "#0c0f0a", "bgCard": "#0f130c", "bgHover": "#161b10", "border": "#2a3a1a"
+      },
+      "light": {
+        "accent": "#5c8a00", "accentLight": "#7cab1a", "cyan": "#0891b2", "magenta": "#a3006e",
+        "green": "#15803d", "yellow": "#a16207", "orange": "#c2410c", "red": "#dc2626",
+        "text": "#1e293b", "textDim": "#475569", "textMuted": "#94a3b8",
+        "bgPrimary": "#f3f7ec", "bgSecondary": "#e7eedb", "bgCard": "#ffffff", "bgHover": "#f8fbf2", "border": "#d0dcc0"
+      }
+    },
+    "vapor": {
+      "label": "Vapor",
+      "desc": "Vaporwave pastel pink + cyan",
+      "dark": {
+        "accent": "#ff6ec7", "accentLight": "#ff9fd8", "cyan": "#72f1ff", "magenta": "#c792ea",
+        "green": "#5af2b0", "yellow": "#fff59d", "orange": "#ffb38a", "red": "#ff6b8b",
+        "text": "#f0e6ff", "textDim": "#a99cc4", "textMuted": "#6a5f86",
+        "bgPrimary": "#0d0814", "bgSecondary": "#140d1f", "bgCard": "#1a1228", "bgHover": "#241836", "border": "#2e2142"
+      },
+      "light": {
+        "accent": "#d6469e", "accentLight": "#ff6ec7", "cyan": "#0e9bb0", "magenta": "#8b5cf6",
+        "green": "#10a37f", "yellow": "#b59000", "orange": "#d97757", "red": "#e11d48",
+        "text": "#2a1e3a", "textDim": "#5a4a72", "textMuted": "#9a8ab0",
+        "bgPrimary": "#f7f0fb", "bgSecondary": "#ede2f5", "bgCard": "#ffffff", "bgHover": "#faf4fd", "border": "#ddc9ec"
       }
     }
   }

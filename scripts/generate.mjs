@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Generate every editor theme from palette/schemes.json — the single source of
-// truth ported from Audio-Haxor's 5 in-app colorschemes. Emits, for each of the
-// 5 schemes x {dark, light}:
+// truth ported from the canonical HUD colorscheme catalog. Emits, for each
+// scheme x {dark, light}:
 //   - vscode/themes/zpwr-<scheme>-<variant>-color-theme.json
 //   - jetbrains/.../zpwr-<scheme>-<variant>.theme.json  (UI theme)
 //   - jetbrains/.../zpwr-<scheme>-<variant>.xml          (editor scheme)
@@ -463,6 +463,9 @@ pkg.contributes.themes = vscodeThemes;
 writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
 
 // Regenerate plugin.xml (version sourced from vscode/package.json — one source).
+// Scheme count + label list are derived from palette/schemes.json so the
+// marketplace description can never drift from the shipped file set.
+const labels = Object.values(data.schemes).map((d) => d.label);
 const pluginXml = `<idea-plugin>
   <id>com.menketechnologies.zpwr-theme</id>
   <name>ZPWR Cyberpunk HUD</name>
@@ -470,8 +473,8 @@ const pluginXml = `<idea-plugin>
   <vendor email="MenkeTechnologies@gmail.com" url="https://github.com/MenkeTechnologies">MenkeTechnologies</vendor>
 
   <description><![CDATA[
-    <p>The MenkeTechnologies cyberpunk editor themes — the 5 Audio-Haxor preset
-    colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in dark and
+    <p>The MenkeTechnologies cyberpunk editor themes — the ${labels.length} canonical HUD
+    colorschemes (${labels.join(', ')}), each in dark and
     light, with matching editor color schemes. Shared palette with
     <code>zpwrchrome</code>, <code>zpwr</code>, and <code>strykelang</code>.</p>
   ]]></description>

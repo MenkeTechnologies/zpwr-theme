@@ -1,12 +1,12 @@
 <idea-plugin>
   <id>com.menketechnologies.zpwr-theme</id>
   <name>ZPWR Cyberpunk HUD</name>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
   <vendor email="MenkeTechnologies@gmail.com" url="https://github.com/MenkeTechnologies">MenkeTechnologies</vendor>
 
   <description><![CDATA[
-    <p>The MenkeTechnologies cyberpunk editor themes — the 5 Audio-Haxor preset
-    colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in dark and
+    <p>The MenkeTechnologies cyberpunk editor themes — the 8 canonical HUD
+    colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic, Crimson, Toxic, Vapor), each in dark and
     light, with matching editor color schemes. Shared palette with
     <code>zpwrchrome</code>, <code>zpwr</code>, and <code>strykelang</code>.</p>
   ]]></description>
@@ -25,5 +25,11 @@
     <themeProvider id="zpwr-ember-light" path="/zpwr-ember-light.theme.json" />
     <themeProvider id="zpwr-arctic-dark" path="/zpwr-arctic-dark.theme.json" />
     <themeProvider id="zpwr-arctic-light" path="/zpwr-arctic-light.theme.json" />
+    <themeProvider id="zpwr-crimson-dark" path="/zpwr-crimson-dark.theme.json" />
+    <themeProvider id="zpwr-crimson-light" path="/zpwr-crimson-light.theme.json" />
+    <themeProvider id="zpwr-toxic-dark" path="/zpwr-toxic-dark.theme.json" />
+    <themeProvider id="zpwr-toxic-light" path="/zpwr-toxic-light.theme.json" />
+    <themeProvider id="zpwr-vapor-dark" path="/zpwr-vapor-dark.theme.json" />
+    <themeProvider id="zpwr-vapor-light" path="/zpwr-vapor-light.theme.json" />
   </extensions>
 </idea-plugin>

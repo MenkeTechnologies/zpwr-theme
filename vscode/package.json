@@ -2,7 +2,7 @@
   "name": "zpwr-cyberpunk-hud",
   "displayName": "ZPWR Cyberpunk HUD",
   "description": "The MenkeTechnologies cyberpunk editor themes — the 5 Audio-Haxor preset colorschemes (Cyberpunk, Midnight, Matrix, Ember, Arctic), each in dark and light. Shared Strykelang palette with zpwrchrome, zpwr, and strykelang. Companion to vscode-stryke.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "MenkeTechnologies",
   "license": "MIT",
   "engines": {
@@ -82,6 +82,36 @@
         "label": "ZPWR Arctic Light",
         "uiTheme": "vs",
         "path": "./themes/zpwr-arctic-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Crimson",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-crimson-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Crimson Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-crimson-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Toxic",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-toxic-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Toxic Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-toxic-light-color-theme.json"
+      },
+      {
+        "label": "ZPWR Vapor",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zpwr-vapor-dark-color-theme.json"
+      },
+      {
+        "label": "ZPWR Vapor Light",
+        "uiTheme": "vs",
+        "path": "./themes/zpwr-vapor-light-color-theme.json"
       }
     ]
   }

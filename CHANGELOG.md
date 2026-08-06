@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0
+
+- Complete the canonical HUD scheme catalog: add **Crimson, Toxic, Vapor** (dark
+  and light each), ported from `docs/hud-theme.js` `COLOR_SCHEMES` — the same
+  `SCHEME_ORDER` the fleet doc sites ship. 8 schemes, 16 variants per edition.
+- `scripts/generate.mjs` now derives the scheme count and label list in the
+  generated `plugin.xml` description from `palette/schemes.json`, so the
+  marketplace text can't drift from the shipped file set.
+
+
 ## 0.2.0
 
 - Expand to the full set of Audio-Haxor preset colorschemes: **Cyberpunk,

@@ -1,9 +1,9 @@
 # ZPWR Cyberpunk HUD — JetBrains
 
 Cyberpunk themes for IntelliJ IDEA, PyCharm, WebStorm, CLion, GoLand, Rider,
-RustRover, and the rest of the JetBrains family. Ships the **5 Audio-Haxor
-preset colorschemes** (Cyberpunk, Midnight, Matrix, Ember, Arctic) in dark and
-light — 10 UI themes, each with a matching editor color scheme, on the
+RustRover, and the rest of the JetBrains family. Ships the **8 canonical HUD
+colorschemes** (Cyberpunk, Midnight, Matrix, Ember, Arctic, Crimson, Toxic, Vapor) in dark and
+light — 16 UI themes, each with a matching editor color scheme, on the
 **Strykelang HUD** palette.
 
 ## Build
@@ -27,7 +27,7 @@ Behavior → Appearance → Theme** and pick any **ZPWR** scheme.
 
 ## Layout
 
-- `src/main/resources/META-INF/plugin.xml` — plugin descriptor; registers all 10
+- `src/main/resources/META-INF/plugin.xml` — plugin descriptor; registers all 16
   theme providers (generated).
 - `src/main/resources/zpwr-<scheme>-<variant>.theme.json` — UI theme (named
   colors + component overrides), one per scheme/variant, points at its editor scheme.

@@ -1,7 +1,7 @@
 # ZPWR Themes — Palette & Role Mapping
 
-The **color values** for all 5 schemes (Cyberpunk, Midnight, Matrix, Ember,
-Arctic), each in dark and light, live in
+The **color values** for all 8 schemes (Cyberpunk, Midnight, Matrix, Ember,
+Arctic, Crimson, Toxic, Vapor), each in dark and light, live in
 [`palette/schemes.json`](palette/schemes.json) — ported from
 `Audio-Haxor/frontend/js/settings.js` (the in-app preset colorschemes). That
 file is the single source of truth; `scripts/generate.mjs` maps it to every
@@ -44,6 +44,8 @@ The same mapping applies to every scheme/variant.
   up to **Panel** (`#0a0a14`) so the code surface reads as the deepest layer.
 - Threading / concurrency tokens (stryke `~>`, `~>>`, parallel primitives) get
   **Magenta bold** to make the language's defining feature pop.
-- Both editions point at this table; changing a value here means updating
-  `vscode/themes/zpwr-cyberpunk-hud-color-theme.json` and
-  `jetbrains/src/main/resources/zpwr-cyberpunk-hud.{theme.json,xml}` together.
+- Both editions are generated from `palette/schemes.json`; changing a value there
+  and re-running `node scripts/generate.mjs` rewrites
+  `vscode/themes/zpwr-<scheme>-<variant>-color-theme.json` and
+  `jetbrains/src/main/resources/zpwr-<scheme>-<variant>.{theme.json,xml}`
+  together. Never hand-edit a generated theme file.
