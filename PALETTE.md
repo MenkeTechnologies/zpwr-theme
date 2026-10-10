@@ -3,7 +3,8 @@
 The **color values** for all 8 schemes (Cyberpunk, Midnight, Matrix, Ember,
 Arctic, Crimson, Toxic, Vapor), each in dark and light, live in
 [`palette/schemes.json`](palette/schemes.json) — ported from
-`Audio-Haxor/frontend/js/settings.js` (the in-app preset colorschemes). That
+`Audio-Haxor/frontend/js/settings.js` (Cyberpunk, Midnight, Matrix, Ember, Arctic) and
+`docs/hud-theme.js` (Crimson, Toxic, Vapor). That
 file is the single source of truth; `scripts/generate.mjs` maps it to every
 editor theme.
 
